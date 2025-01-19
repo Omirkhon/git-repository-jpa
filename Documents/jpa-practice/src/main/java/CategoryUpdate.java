@@ -16,14 +16,14 @@ public class CategoryUpdate {
 
         Category category = entityManager.find(Category.class, id);
 
+        System.out.print("Введите новое название категории " + category.getName() + ": ");
+        String name = scanner.next();
+        category.setName(name);
         try {
-            System.out.print("Введите новое название категории " + category.getName() + ": ");
-            String name = scanner.next();
-            category.setName(name);
             entityManager.getTransaction().begin();
             entityManager.merge(category);
             entityManager.getTransaction().commit();
-            System.out.println(category.toString());
+            System.out.println(category);
         } catch (Exception e) {
             System.out.print("Категория с id=" + id + "не существует.");
             entityManager.getTransaction().rollback();

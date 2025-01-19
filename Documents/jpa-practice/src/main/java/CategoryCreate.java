@@ -22,7 +22,7 @@ public class CategoryCreate {
             entityManager.persist(category);
             entityManager.getTransaction().commit();
             System.out.println("Категория создана.");
-            System.out.println(category.toString());
+            System.out.println(category);
         } catch (Exception e) {
             System.out.println("Категория с таким названием уже существует");
         }
