@@ -1,6 +1,7 @@
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import model.Category;
 
 import java.util.Scanner;
 
